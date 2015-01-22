@@ -1,10 +1,62 @@
 extends layout
 
 block content
-	doctype html
-	html.
-		<body>
-			<h1> givers </h1>
-			<p> Welcome to givers </p>
-		</body> 
-	
+    doctype html(lang='en')
+
+    body#page-top(data-spy='scroll', data-target='.navbar-fixed-top')
+    // Navigation
+    nav.navbar.navbar-custom.navbar-fixed-top(role='navigation')
+      .container
+        .navbar-header
+          button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-main-collapse')
+            i.fa.fa-bars
+          |                 
+          a.navbar-brand.page-scroll(href='#page-top')
+            |   
+            span.light Givers
+        // Collect the nav links, forms, and other content for toggling
+        .collapse.navbar-collapse.navbar-right.navbar-main-collapse
+          ul.nav.navbar-nav
+            // Hidden li included to remove active class from about link when scrolled up past about section
+            li.hidden
+              a(href='#page-top')
+            |                     
+            li
+              a.page-scroll(href='#about') About
+            |                     
+            li
+              a.page-scroll(href='#Join') Join
+            |                     
+            li
+              a.page-scroll(href='#contact') Contact
+        // /.navbar-collapse
+      // /.container
+    // Intro Header
+    header.intro
+        .container
+          .row
+            .col-md-8.col-md-offset-2
+              h1.brand-heading Givers
+              |                         
+              p.intro-text
+                | A free, responsive, one page Bootstrap theme.
+                br
+                | Created by Start Bootstrap.
+              |                         
+              a.btn.btn-circle.page-scroll(href='#about')
+                i.fa.fa-angle-double-down.animated
+   
+    // Footer
+    footer
+      .container.text-center
+        p Copyright &copy; Your Website 2014
+    // jQuery
+    script(src='js/jquery.js')
+    // Bootstrap Core JavaScript
+    script(src='js/bootstrap.min.js')
+    // Plugin JavaScript
+    script(src='js/jquery.easing.min.js')
+    // Google Maps API Key - Use your own API key to enable the map feature. More information on the Google Maps API can be found at https://developers.google.com/maps/
+    script(type='text/javascript', src='https://maps.googleapis.com/maps/api/js?key=AIzaSyCRngKslUGJTlibkQ3FkfTxj3Xss1UlZDA&sensor=false')
+    // Custom Theme JavaScript
+    script(src='js/grayscale.js')
